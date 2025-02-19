@@ -13,7 +13,7 @@ Using Azure AI services hosted in Azure enables application developers to focus 
 
 Many of the Azure AI services APIs can be packaged and deployed in a *container*, enabling organizations to host Azure AI services in their own infrastructure; for example in local Docker servers, Azure Container Instances, or Azure Kubernetes Services clusters. Containerized Azure AI services need to communicate with an Azure-based Azure AI services account to support billing; but application data is not passed to the back-end service, and organizations have greater control over the deployment configuration of their containers, enabling custom solutions for authentication, scalability, and other considerations.
 
-## Provision a Resource Group for Azure AI Services containers
+## Create a Resource Group for Azure AI Services containers
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
 2. In the top search bar, select **Resource group** and create a resource group with the following settings:
