@@ -47,7 +47,7 @@ Many commonly used Azure AI services APIs are available in container images. For
     > The command will look for the image on your local machine, and if it doesn't find it there it will pull it from the *mcr.microsoft.com* image registry and deploy it to your Docker instance. When deployment is complete, the container will start and listen for incoming requests on port 5000.
 
     ```
-    docker run --rm -it -p 5000:5000 --memory 8g --cpus 1 "mcr.microsoft.com/azure-cognitive-services/vision/read:latest" Eula="accept" Billing="https://resazureaisvcs.cognitiveservices.azure.com/" ApiKey="FJbIU9Nk1culgGU36iLVAmimfDxi2ZTTYNP7cmMxLr1kTx3Ce8ZaJQQJ99BBACYeBjFXJ3w3AAAEACOG0juy"
+    docker run --rm -it -p 5000:5000 --memory 8g --cpus 4 "mcr.microsoft.com/azure-cognitive-services/vision/read:latest" Eula="accept" Billing="https://resazureaisvcs.cognitiveservices.azure.com/" ApiKey="FJbIU9Nk1culgGU36iLVAmimfDxi2ZTTYNP7cmMxLr1kTx3Ce8ZaJQQJ99BBACYeBjFXJ3w3AAAEACOG0juy"
     ```
 
 ## Use the container
