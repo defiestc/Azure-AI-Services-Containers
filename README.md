@@ -93,20 +93,15 @@ Many commonly used Azure AI services APIs are available in container images. For
 
 ## Use the container
 
-1. In your editor, open **rest-test.cmd** and edit the **curl** command it contains (shown below), replacing *&lt;your_ACI_IP_address_or_FQDN&gt;* with the IP address or FQDN for your container.
+1. Open a shell command prompt and enter the following **curl** command (shown below):.
 
     ```
     curl -X POST "http://20.231.246.136:5000/text/analytics/v3.1/sentiment" -H "Content-Type: application/json" --data-ascii "{'documents':[{'id':1,'text':'The performance was amazing! The sound could have been clearer.'},{'id':2,'text':'The food and service were unacceptable. While the host was nice, the waiter was rude and food was cold.'}]}"
     ```
 
-2. Save your changes to the script by pressing **CTRL+S**. Note that you do not need to specify the Azure AI services endpoint or key - the request is processed by the containerized service. The container in turn communicates periodically with the service in Azure to report usage for billing, but does not send request data.
-3. Enter the following command to run the script:
+2. Verify that the command returns a JSON document containing information about the sentiment detected in the two input documents (which should be postive and negative, in that order).
 
-    ```
-    ./rest-test.cmd
-    ```
-
-4. Verify that the command returns a JSON document containing information about the sentiment detected in the two input documents (which should be postive and negative, in that order).
+    > **Note**: You can also use SOAP UI and any other tool to test the REST endpoint.
 
 ## Clean Up
 
