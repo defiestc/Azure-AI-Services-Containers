@@ -13,20 +13,14 @@ Using Azure AI services hosted in Azure enables application developers to focus 
 
 Many of the Azure AI services APIs can be packaged and deployed in a *container*, enabling organizations to host Azure AI services in their own infrastructure; for example in local Docker servers, Azure Container Instances, or Azure Kubernetes Services clusters. Containerized Azure AI services need to communicate with an Azure-based Azure AI services account to support billing; but application data is not passed to the back-end service, and organizations have greater control over the deployment configuration of their containers, enabling custom solutions for authentication, scalability, and other considerations.
 
-## Clone the repository in Visual Studio Code
+## Provision a Resource Group for Azure AI Services containers
 
-You'll develop your code using Visual Studio Code. The code files for your app have been provided in a GitHub repo.
-
-> **Tip**: If you have already cloned the **mslearn-ai-services** repo, open it in Visual Studio code. Otherwise, follow these steps to clone it to your development environment.
-
-1. Start Visual Studio Code.
-2. Open the palette (SHIFT+CTRL+P) and run a **Git: Clone** command to clone the `https://github.com/MicrosoftLearning/mslearn-ai-services` repository to a local folder (it doesn't matter which folder).
-3. When the repository has been cloned, open the folder in Visual Studio Code.
-4. Wait while additional files are installed to support the C# code projects in the repo, if necessary
-
-    > **Note**: If you are prompted to add required assets to build and debug, select **Not Now**.
-
-5. Expand the `Labfiles/04-use-a-container` folder.
+1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
+2. In the top search bar, select **Resource group** and create a resource group with the following settings:
+    - **Subscription**: *Visual Studio Premium with MSDN*
+    - **Resource group name**: *rgAzureAIServicesContainers*
+    - **Region**: *East US*
+3. Review and create the resource group.
 
 ## Provision an Azure AI Services resource
 
