@@ -2,7 +2,7 @@
 
 Many commonly used Azure AI services APIs are available in container images. For a full list, check out the [Azure AI services documentation](https://learn.microsoft.com/en-us/azure/ai-services/cognitive-services-container-support#containers-in-azure-ai-services). In this exercise, we'll use the container image for the Text Analytics *Sentiment analysis* API; but the principles are the same for all of the available images.
 
-1. In the Azure portal, on the **Home** page, select the **&#65291;Create a resource** button, search for *container instances*, and create a **Container Instances** resource with the following settings:
+1. 1. Go to the [Create](https://portal.azure.com/#create/Microsoft.ContainerInstances) page for Container Instances and create a **Container Instances** resource with the following settings:
 
     - **Basics**:
         - **Subscription**: *Visual Studio Premium with MSDN*
