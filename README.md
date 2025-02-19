@@ -35,7 +35,7 @@ These will need the endpoint and one of the keys from this page in the next proc
 
 Many commonly used Azure AI services APIs are available in container images. For a full list, check out the [Azure AI services documentation](https://learn.microsoft.com/en-us/azure/ai-services/cognitive-services-container-support#containers-in-azure-ai-services). In this exercise, we'll use the container image for the Text Analytics *Sentiment analysis* API; but the principles are the same for all of the available images.
 
-1. In the Azure portal, on the **Home** page, select the **&#65291;Create a resource** button, search for *container instances*, and create a **Container Instances** resource with the following settings:
+1. Go to the [Create](https://portal.azure.com/#create/Microsoft.ContainerInstances) page for Container Instances and create a **Container Instances** resource with the following settings:
 
     - **Basics**:
         - **Subscription**: *Visual Studio Premium with MSDN*
@@ -68,9 +68,9 @@ Many commonly used Azure AI services APIs are available in container images. For
     - **Tags**:
         - *Don't add any tags*
 
-2. Select **Review + create** then select **Create**. Wait for deployment to complete, and then go to the deployed resource.
+3. Select **Review + create** then select **Create**. Wait for deployment to complete, and then go to the deployed resource.
     > **Note** Please note that deploying an Azure AI container to Azure Container Instances typically takes 5-10 minutes (provisioning) before they are ready to use.
-3. Observe the following properties of your container instance resource on its **Overview** page:
+4. Observe the following properties of your container instance resource on its **Overview** page:
     - **Status**: This should be *Running*.
     - **IP Address**: 20.231.246.136
     - **FQDN**: This is the *fully-qualified domain name* of the container instances resource, if we plan to use this to access the container instances instead of the IP address.
