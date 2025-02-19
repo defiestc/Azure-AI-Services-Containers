@@ -37,7 +37,7 @@ If you don't already have one in your subscription, you'll need to provision an 
 4. Wait for deployment to complete, and then view the deployment details.
 5. When the resource has been deployed, go to it and view its **Keys and Endpoint** page.
     - **Key**: *FJbIU9Nk1culgGU36iLVAmimfDxi2ZTTYNP7cmMxLr1kTx3Ce8ZaJQQJ99BBACYeBjFXJ3w3AAAEACOG0juy*
-    - **Endpoint**: *https://resazureaisvcs.cognitiveservices.azure.com/* 
+    - **Endpoint**: *https://resazureaisvcs.cognitiveservices.azure.com/*
 These will need the endpoint and one of the keys from this page in the next procedure.
 
 ## Deploy and run a Sentiment Analysis container
