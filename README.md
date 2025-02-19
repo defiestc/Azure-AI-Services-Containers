@@ -41,7 +41,7 @@ Many commonly used Azure AI services APIs are available in container images. For
         - **Subscription**: *Visual Studio Premium with MSDN*
         - **Resource group**: *rgAzureAIServicesContainers*
         - **Container name**: *cntsentimentanalysis*
-        - **Region**: *Ease US*
+        - **Region**: *East US*
         - **Availability zones**: None
         - **SKU**: Standard
         - **Image source**: Other Registry
