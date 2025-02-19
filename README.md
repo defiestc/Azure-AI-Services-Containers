@@ -34,14 +34,17 @@ If you don't already have one in your subscription, you'll need to provision an 
 
 1. Open the Azure portal at `https://portal.azure.com`, and sign in using the Microsoft account associated with your Azure subscription.
 2. In the top search bar, search for *Azure AI services*, select **Azure AI services multi-service account** and create a resource with the following settings:
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Choose or create a resource group (if you are using a restricted subscription, you may not have permission to create a new resource group - use the one provided)*
-    - **Region**: *Choose any available region*
-    - **Name**: *Enter a unique name*
+    - **Subscription**: *Visual Studio Premium with MSDN*
+    - **Resource group**: *rgAzureAIServicesContainers*
+    - **Region**: *East US*
+    - **Name**: *resAzureAISvcs*
     - **Pricing tier**: Standard S0
 3. Select the required checkboxes and create the resource.
 4. Wait for deployment to complete, and then view the deployment details.
-5. When the resource has been deployed, go to it and view its **Keys and Endpoint** page. You will need the endpoint and one of the keys from this page in the next procedure.
+5. When the resource has been deployed, go to it and view its **Keys and Endpoint** page.
+    - **Key**: *FJbIU9Nk1culgGU36iLVAmimfDxi2ZTTYNP7cmMxLr1kTx3Ce8ZaJQQJ99BBACYeBjFXJ3w3AAAEACOG0juy*
+    - **Endpoint**: *https://resazureaisvcs.cognitiveservices.azure.com/* 
+These will need the endpoint and one of the keys from this page in the next procedure.
 
 ## Deploy and run a Sentiment Analysis container
 
@@ -50,10 +53,10 @@ Many commonly used Azure AI services APIs are available in container images. For
 1. In the Azure portal, on the **Home** page, select the **&#65291;Create a resource** button, search for *container instances*, and create a **Container Instances** resource with the following settings:
 
     - **Basics**:
-        - **Subscription**: *Your Azure subscription*
-        - **Resource group**: *Choose the resource group containing your Azure AI services resource*
-        - **Container name**: *Enter a unique name*
-        - **Region**: *Choose any available region*
+        - **Subscription**: *Visual Studio Premium with MSDN*
+        - **Resource group**: *rgAzureAIServicesContainers*
+        - **Container name**: *cntsentimentanalysis*
+        - **Region**: *Ease US*
         - **Availability zones**: None
         - **SKU**: Standard
         - **Image source**: Other Registry
@@ -71,8 +74,8 @@ Many commonly used Azure AI services APIs are available in container images. For
 
             | Mark as secure | Key | Value |
             | -------------- | --- | ----- |
-            | Yes | `ApiKey` | *Either key for your Azure AI services resource* |
-            | Yes | `Billing` | *The endpoint URI for your Azure AI services resource* |
+            | Yes | `ApiKey` | *FJbIU9Nk1culgGU36iLVAmimfDxi2ZTTYNP7cmMxLr1kTx3Ce8ZaJQQJ99BBACYeBjFXJ3w3AAAEACOG0juy* |
+            | Yes | `Billing` | *https://resazureaisvcs.cognitiveservices.azure.com/* |
             | No | `Eula` | `accept` |
 
         - **Command override**: [ ]
@@ -99,7 +102,7 @@ Many commonly used Azure AI services APIs are available in container images. For
 1. In your editor, open **rest-test.cmd** and edit the **curl** command it contains (shown below), replacing *&lt;your_ACI_IP_address_or_FQDN&gt;* with the IP address or FQDN for your container.
 
     ```
-    curl -X POST "http://<your_ACI_IP_address_or_FQDN>:5000/text/analytics/v3.1/sentiment" -H "Content-Type: application/json" --data-ascii "{'documents':[{'id':1,'text':'The performance was amazing! The sound could have been clearer.'},{'id':2,'text':'The food and service were unacceptable. While the host was nice, the waiter was rude and food was cold.'}]}"
+    curl -X POST "http://20.231.246.136:5000/text/analytics/v3.1/sentiment" -H "Content-Type: application/json" --data-ascii "{'documents':[{'id':1,'text':'The performance was amazing! The sound could have been clearer.'},{'id':2,'text':'The food and service were unacceptable. While the host was nice, the waiter was rude and food was cold.'}]}"
     ```
 
 2. Save your changes to the script by pressing **CTRL+S**. Note that you do not need to specify the Azure AI services endpoint or key - the request is processed by the containerized service. The container in turn communicates periodically with the service in Azure to report usage for billing, but does not send request data.
