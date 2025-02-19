@@ -15,7 +15,7 @@ Many commonly used Azure AI services APIs are available in container images. For
         - **Image type**: Public
         - **Image**: `mcr.microsoft.com/azure-cognitive-services/vision/read:latest`
         - **OS type**: Linux
-        - **Size**: 1 vcpu, 8 GB memory
+        - **Size**: 4 vcpu, 8 GB memory
     - **Networking**:
         - **Networking type**: Public
         - **DNS name label**: *Enter a unique name for the container endpoint*
